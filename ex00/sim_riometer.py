@@ -22,8 +22,8 @@ h.close()
 recombination_coeff=3e-13
 
 # plot ionization rate
-plt.plot(q,hgt/1e3)
-plt.title("Ionization-rate\n(for an incident flux of 1 m$^{-2}$s$^{-1}$ precipitating electrons)")
+plt.semilogx(q,hgt/1e3)
+plt.title("Ionization-rate $q(h)$\n(for an incident flux of 1 m$^{-2}$s$^{-1}$ precipitating electrons)")
 plt.xlabel("Ionization rate (m$^{-3}$ s$^{-1}$)")
 plt.ylabel("Height (km)")
 plt.tight_layout()
@@ -36,12 +36,10 @@ dh=n.diff(hgt)[0]
 # (should be about 300 for a 10 keV electron, source: Björn)
 Q_tot=sinteg.trapezoid(q,hgt,dx=dh)
 
-
-
 # steady state electron density
-plt.plot(n.sqrt(1e12*q/recombination_coeff),hgt/1e3)
-plt.title("Steady-state electron density")
-plt.xlabel("Electron density (m$^{-3}$)")
+plt.semilogx(n.sqrt(1e12*q/recombination_coeff),hgt/1e3)
+plt.title("Steady-state electron density $n_e(h) = \\sqrt{q(h)/\\alpha}$")
+plt.xlabel("Electron density ($m^{-3}$)")
 plt.ylabel("Height (km)")
-plt.tight_layout()
 plt.show()
+
