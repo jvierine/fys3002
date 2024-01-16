@@ -4,6 +4,9 @@ import ppigrf
 import matplotlib.pyplot as plt
 from datetime import datetime
 
+# Look at documentation here:
+# https://github.com/klaundal/ppigrf/
+
 lat = 69.65
 lon = 18.96
 # 0 to 500 km
@@ -30,4 +33,5 @@ plt.xlabel("$f_c$ (Hz)")
 plt.ylabel("Height (km)")
 plt.tight_layout()
 plt.savefig("gyrofreq.png")
+plt.tight_layout()
 plt.show()
