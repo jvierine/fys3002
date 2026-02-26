@@ -83,6 +83,8 @@ plt.show()
 Te=300.0
 # use effective collision frequency when nu_en << \omega
 # Hargreaves (1969)
+# formula and coefficient for collision frequency from table in
+# Banks and Kockarts, Aeronomy: Part A (1973).
 nu_en = (5/2)*5.4e-10*(n_N2/1e6)*n.sqrt(Te)
 
 plt.semilogx(nu_en,hgt/1e3)
